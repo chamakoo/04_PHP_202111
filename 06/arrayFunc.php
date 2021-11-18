@@ -13,9 +13,9 @@ array_push($arr, 'D');
 $num = count($arr);
 array_push($arr, $num . '個');
 $result = implode(' | ', $arr);
-// echo '<pre>';
-// print_r($arr);
-// echo '</pre>';
+echo '<pre>';
+print_r($_SERVER);
+echo '</pre>';
 
 // echo $num;
 ?>
