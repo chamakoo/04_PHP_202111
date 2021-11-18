@@ -17,3 +17,23 @@ echo '</pre>';
 echo '<pre>';
 print_r($fruits);
 echo '</pre>';
+
+// 果物の値段リストを作成
+$arrayList = [
+    'リンゴ' => 100,
+    'バナナ' => 200,
+    'ぶどう' => 300
+];
+// 「イチゴ：400(円)」を追加
+// 「リンゴ」の値段を「80(円)」に変更
+
+$arrayList['イチゴ'] = 400;
+$arrayList['リンゴ'] = 80;
+
+echo '<pre>';
+var_dump($arrayList);
+echo '</pre>';
+
+echo '<pre>';
+print_r($arrayList);
+echo '</pre>';
