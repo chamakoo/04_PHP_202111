@@ -12,6 +12,7 @@ $totalPoint = 0;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,19 +24,20 @@ $totalPoint = 0;
             width: 800px;
             margin: auto;
         }
-    
+
         th,
         td {
             border: 1px solid #666;
             padding: 15px;
         }
-    
+
         th,
         tr:nth-child(even) {
             background-color: #eee;
         }
     </style>
 </head>
+
 <body>
     <table>
         <tr>
@@ -43,22 +45,50 @@ $totalPoint = 0;
             <th>年齢</th>
             <th>ポイント</th>
         </tr>
-        <?php foreach ($memberList as $member):?>
+        <?php foreach ($memberList as $member) : ?>
             <tr>
-                <td><?=$member['name']?>様</td>
-                <td><?=$member['age']?>歳</td>
-                <td><?=$member['point']?>pt</td>
+                <td><?= $member['name'] ?>様</td>
+                <td><?= $member['age'] ?>歳</td>
+                <td><?= $member['point'] ?>pt</td>
             </tr>
             <?php
-                $totalAge   += $member['age'];
-                $totalPoint += $member['point'];
+            $totalAge   += $member['age'];
+            $totalPoint += $member['point'];
             ?>
-        <?php endforeach;?>
+        <?php endforeach; ?>
         <tr>
             <th>平均</th>
-            <td><?=$totalAge   / count($memberList)?>歳</td>
-            <td><?=$totalPoint / count($memberList)?>pt</td>
+            <td><?= $totalAge   / count($memberList) ?>歳</td>
+            <td><?= $totalPoint / count($memberList) ?>pt</td>
+        </tr>
+    </table>
+    <?php
+    $totalAge   = 0;
+    $totalPoint = 0;
+    ?>
+    <table>
+        <tr>
+            <th>名前</th>
+            <th>年齢</th>
+            <th>ポイント</th>
+        </tr>
+        <?php for ($i = 0; $i < count($memberList); $i++) : ?>
+            <tr>
+                <td><?= $memberList[$i]['name'] ?>様</td>
+                <td><?= $memberList[$i]['age'] ?>歳</td>
+                <td><?= $memberList[$i]['point'] ?>pt</td>
+            </tr>
+            <?php
+            $totalAge   += $memberList[$i]['age'];
+            $totalPoint += $memberList[$i]['point'];
+            ?>
+        <?php endfor; ?>
+        <tr>
+            <th>平均</th>
+            <td><?= $totalAge   / count($memberList) ?>歳</td>
+            <td><?= $totalPoint / count($memberList) ?>pt</td>
         </tr>
     </table>
 </body>
+
 </html>
