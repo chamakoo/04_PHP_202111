@@ -5,6 +5,7 @@ $spring = '';
 $summer = '';
 $fall   = '';
 $winter = '';
+
 if (!empty($_POST)) {
     $spring = $_POST['spring'];
     $summer = $_POST['summer'];
